@@ -35,6 +35,7 @@ jobs:
           python -m poetry install
 
       - name: Get issue number
+        run: |
           echo {{ github.event.number }}
 
       - name: Run get youtube transcriptions script
