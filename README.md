@@ -61,6 +61,8 @@ Local repo clone or python environment configuration isn't necessary, although t
 
 ## YouTube Demonstration
 
+Click in the picture below to watch a short YouTube video explained all the repo functionalities and configuration.
+
 [![Watch the video](https://img.youtube.com/vi/Y1ZKHX0sAfg/maxresdefault.jpg)](https://youtu.be/Y1ZKHX0sAfg)
 
 ## Contributions
