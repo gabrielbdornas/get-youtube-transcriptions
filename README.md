@@ -59,6 +59,9 @@ Local repo clone or python environment configuration isn't necessary, although t
 
 - Check out the completed `txt` file to find all transcriptions found.
 
+## YouTube Demonstration
+
+[![Watch the video](https://img.youtube.com/vi/Y1ZKHX0sAfg/maxresdefault.jpg)](https://youtu.be/Y1ZKHX0sAfg)
 
 ## Contributions
 
