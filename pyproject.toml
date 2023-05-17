@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "get-youtube-transcriptions"
+version = "0.1.0"
+description = ""
+authors = ["Gabriel Dornas <gabrielbdornas@gmail.com>"]
+readme = "README.md"
+packages = [{include = "get_youtube_transcriptions"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+youtube-transcript-api = "^0.5.0"
+pytube = "^15.0.0"
+stringcase = "^1.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipdb = "^0.13.13"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
