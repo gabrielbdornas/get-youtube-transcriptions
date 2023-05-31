@@ -6,8 +6,8 @@ import stringcase
 import sys
 
 def get_transcripts(video_url):
+	video_id = get_video_id(video_url)
 	try:
-		video_id = get_video_id(video_url)
 		transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
 		file_name = build_file_name(video_id)
 		with open(f'transcripts/{file_name}', 'a', encoding='utf-8') as file:	
@@ -23,7 +23,7 @@ def get_transcripts(video_url):
 		file_name = build_error_file_name(video_id)
 		with open(f'transcripts/{file_name}', 'a', encoding='utf-8') as file:
 			file.write(f'Video with id {video_id} not found.')
-		print('Something went wrong. Check video id.')
+		print('Something went wrong. Check video URL.')
 
 def get_video_id(video_url):
 	video_url_split = video_url.split('watch?v=')
