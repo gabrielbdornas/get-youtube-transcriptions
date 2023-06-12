@@ -32,6 +32,8 @@ def get_video_id(video_url):
 def build_file_name(video_id):
 	today = get_formated_today()
 	video_title = format_video_title(get_video_title(video_id))
+	video_title = snake_small_case(video_title)
+	import ipdb; ipdb.set_trace(context=10)
 	name = f'{today}_{video_id}_{video_title}.txt'
 	return name
 
@@ -48,6 +50,15 @@ def get_video_title(video_id):
 def format_video_title(title):
 	title = stringcase.snakecase(title)
 	return title
+
+def snake_small_case(name):
+	name_lower = name.lower()
+	name_unidecode = unidecode(name_lower)
+	name_alphanumeric = re.sub('[^A-Za-z0-9]+', ' ', name_unidecode)
+	name_split = name_alphanumeric.split(' ')
+	name_empty = [x for x in name_split if x != '']
+	name = '_'.join(name_empty)
+	return name
 
 if __name__ == '__main__':
 	get_transcripts(sys.argv[1])
