@@ -27,15 +27,11 @@ Local repo clone or python environment configuration isn't necessary, although t
 
 ## Usage
 
-- Get the wanted YouTube video id:
+- Get the wanted YouTube video link, with its id:
 
 ![youtube_video_id](assets/youtube_video_id.jpg)
 
-- Open a new issue on your brand new repository:
-
-![open_github_issue](assets/open_github_issue.jpg)
-
-- Past the wanted YouTube video id as your new GitHub issue title:
+- Open an [issue](https://github.com/gabrielbdornas/get-youtube-transcriptions/issues/new) on your brand new repository, and use the wanted YouTube video link, with its id, as your new GitHub issue title:
 
 ![github_issue_title](assets/github_issue_title.jpg)
 
