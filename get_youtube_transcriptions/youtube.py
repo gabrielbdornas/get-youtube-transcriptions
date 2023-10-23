@@ -1,4 +1,6 @@
 from pytube import YouTube
+from unidecode import unidecode
+import re
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import TextFormatter
 from utils import get_formated_today
@@ -10,7 +12,7 @@ def get_transcripts(video_url):
 	try:
 		transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
 		file_name = build_file_name(video_id)
-		with open(f'transcripts/{file_name}', 'a', encoding='utf-8') as file:	
+		with open(f'transcripts/{file_name}', 'a', encoding='utf-8') as file:
 			for transcript in transcript_list:
 				formatter = TextFormatter()
 				text = transcript.fetch()
@@ -33,7 +35,6 @@ def build_file_name(video_id):
 	today = get_formated_today()
 	video_title = format_video_title(get_video_title(video_id))
 	video_title = snake_small_case(video_title)
-	import ipdb; ipdb.set_trace(context=10)
 	name = f'{today}_{video_id}_{video_title}.txt'
 	return name
 
