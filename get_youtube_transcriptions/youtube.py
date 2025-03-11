@@ -1,4 +1,6 @@
-from pytube import YouTube
+import os
+from dotenv import load_dotenv
+from googleapiclient.discovery import build
 from unidecode import unidecode
 import re
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -44,11 +46,20 @@ def build_error_file_name(video_id):
 	return name
 
 def get_video_title(video_id):
-	title = YouTube(f'https://youtube.com/watch?v={video_id}')
-	title = title.streams[0].default_filename
-	return title
+    load_dotenv()
+    YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY')
+    youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
+    request = youtube.videos().list(
+        part="snippet",
+        id=video_id,
+    )
+    response = request.execute()
+    if "items" in response and response["items"]:
+        return response["items"][0]["snippet"]["title"]
+    return None
 
 def format_video_title(title):
+	breakpoint()
 	title = stringcase.snakecase(title)
 	return title
 
