@@ -53,7 +53,7 @@ jobs:
       #----------------------------------------------
       - name: Run get youtube transcriptions script
         run: |
-          python -m poetry run python get_youtube_transcriptions/youtube.py ${{ github.event.issue.title }}
+          poetry run python get_youtube_transcriptions/youtube.py ${{ github.event.issue.title }}
       #----------------------------------------------
       #              Finish process
       #----------------------------------------------
